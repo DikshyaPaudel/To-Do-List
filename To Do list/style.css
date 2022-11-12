@@ -1,0 +1,140 @@
+:root {
+  --dark: #374151;
+  ---darker: #1a212b;
+  ---darkest: #141a23;
+  ---gray: #6b7280;
+  --light: #eee;
+  ---pink: #e8439e;
+  ---purple: #8b5cf6;
+}
+/* var(--name)*/
+* {
+  box-sizing: border box;
+  margin: 0;
+  font-family: "Fira sans", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /*view-port height*/
+  background: var(--dark);
+  color: white;
+}
+
+header {
+  padding: 2rem 1rem; /*top&bottom right&left*/
+  max-width: 800px; /*make sure never goes above 800px*/
+  width: 100%;
+  margin: 0 auto; /*auto goona make it stay at the center in bigger screen */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 300; /*how bold or light your text will appear*/
+  color: var(---gray);
+  margin-bottom: 20px;
+}
+
+#new-task-form {
+  display: flex;
+}
+
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+#new-task-input {
+  flex: 1 1 0%; /*flex-grow, flex-basis, flex-basis*/
+  background-color: var(---darker);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  color: var(--light);
+}
+#new-task-input::placeholder {
+  color: var(---gray);
+}
+#new-task-submit {
+  color: var(---pink);
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #e8439e, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#new-task-submit:hover {
+  opacity: 0.8;
+}
+#new-task-submit:active {
+  opacity: 0.6;
+}
+main {
+  flex: 1 1 0%; /*flex-grow, flex-basis, flex-basis*/
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+.task-list {
+  padding: 1rem;
+}
+.tasks-list h2 {
+  padding: 2rem 1rem;
+  font-weight: 300; /*how bold or light your text will appear*/
+  color: var(---gray);
+  margin-bottom: 1rem;
+}
+#tasks .task {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(---darkest);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+}
+
+#tasks .task .content .text {
+  color: var(--light);
+  font-size: 1.125rem;
+  width: 100%;
+  display: block;
+  transform: 7.4s;
+}
+#tasks .task .content {
+  flex: 1 1 0%;
+}
+#tasks .task .content .text:not(:read-only) {
+  color: var(---pink);
+}
+#tasks .task .actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+.task .actions button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+.task .actions .button:hover {
+  opacity: 0.8;
+}
+.task .actions .button:active {
+  opacity: 0.6;
+}
+.task .actions .edit {
+  background-image: linear-gradient(to right, #e8439e, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.task .actions .delete {
+  color: crimson;
+}
